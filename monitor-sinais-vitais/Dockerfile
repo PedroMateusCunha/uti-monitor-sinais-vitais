@@ -10,8 +10,8 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 WORKDIR $USER_HOME
-COPY requirements.txt .
-RUN python3 -m pip install --upgrade pip && \ 
-    pip install -r ${USER_HOME}/requirements.txt
+COPY requirements/ ./requirements
+RUN python3 -m pip install --upgrade pip && \
+    pip install -r ${USER_HOME}/requirements/requirements.${ENV_NAME}.txt
 
-CMD ["uvicorn", "sinais_vitais:app", "--host", "0.0.0.0", "--port", "7001","--reload"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000","--reload"]
