@@ -12,7 +12,7 @@ def read_root():
 def health_check():
     return {"status": "ok"}
 
-@app.get("/sinais_vitais")
+@app.get("/status")
 def sinais_vitais():
     leito.gerar_sinais_vitais()
     leito.gerar_alertas()

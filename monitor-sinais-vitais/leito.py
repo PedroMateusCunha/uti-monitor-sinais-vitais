@@ -46,12 +46,13 @@ class Leito:
         
     def get_sinais_vitais(self):
         return {
-            "sinais_vitais": {
-                "temperatura": self.temperatura,
-                "spo2": self.spo2,
-                "freq_cardiaca": self.freq_cardiaca,
-                "freq_respiratoria": self.freq_respiratoria,
-                "pressao_arterial": f"{self.pressao_sistolica}/{self.pressao_diastolica}"
-            },
-            "alertas": self.alertas
-        }
+                    "sinais_vitais": {
+                    "temperatura": self.temperatura,
+                    "spo2": self.spo2,
+                    "freq_cardiaca": self.freq_cardiaca,
+                    "freq_respiratoria": self.freq_respiratoria,
+                    "pressao_arterial": f"{self.pressao_sistolica}/{self.pressao_diastolica}",
+                    "alertas": self.alertas
+                    }
+                }
+            
