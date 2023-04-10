@@ -9,7 +9,7 @@ services:
           APP_NAME: ${APP_NAME:-sinais-vitais}
           ENV_NAME: ${ENV_NAME:-dev}
       ports:
-        - "${SINAIS_VITAIS_PORT:-7001}:7001"
+        - "${SINAIS_VITAIS_PORT:-7001}:8000"
       volumes:
         - ./monitor-sinais-vitais:/usr/app
       restart: unless-stopped
