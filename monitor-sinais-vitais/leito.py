@@ -42,7 +42,7 @@ class Leito:
         } #Pode ser um "static" um atributo da prórpia classe
 
         sinais_vitais = {
-            #repetição dessas string, coloca numa classe "constants" e sabe a variável 
+            #repetição dessas string, coloca numa classe "constants" e sabe a variável
             # em vez da própria string
             "temperatura": self.temperatura, 
             "spo2": self.spo2,
