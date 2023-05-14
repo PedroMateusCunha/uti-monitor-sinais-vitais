@@ -16,7 +16,7 @@ class Leito:
         self.pressao_sistolica = 0
         self.pressao_diastolica = 0
         self.alertas = []
-        
+
     def gerar_sinais_vitais(self):
         """
         Metodo para gerar sinais vitais para o monitoramento leito hospitalar
@@ -42,7 +42,9 @@ class Leito:
         } #Pode ser um "static" um atributo da prórpia classe
 
         sinais_vitais = {
-            "temperatura": self.temperatura, #repetição dessas string, coloca numa classe "constants" e sabe a variável em vez da própria string
+            #repetição dessas string, coloca numa classe "constants" e sabe a variável 
+            # em vez da própria string
+            "temperatura": self.temperatura, 
             "spo2": self.spo2,
             "freq_respiratoria": self.freq_respiratoria,
             "freq_cardiaca": self.freq_cardiaca,
@@ -56,7 +58,7 @@ class Leito:
                 self.alertas.append(f"{sinal}_baixa")
             elif sinais_vitais[sinal] > limite["max"]:
                 self.alertas.append(f"{sinal}_alta")
-        
+
     def get_sinais_vitais(self):
         """
         Metodo para recuperar os sinais vitais para o monitoramento leito hospitalar
