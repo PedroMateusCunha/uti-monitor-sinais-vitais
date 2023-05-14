@@ -1,7 +1,14 @@
+"""Modulo para monitoramento do leito hospitalar."""
 import random
 
 class Leito:
+    """
+    Classe para monitoramento do leito hospitalar
+    """
     def __init__(self):
+        """
+        Metodo para inicializar os atributos do monitoramento leito hospitalar
+        """
         self.temperatura = 0
         self.spo2 = 0
         self.freq_respiratoria = 0
@@ -11,6 +18,9 @@ class Leito:
         self.alertas = []
         
     def gerar_sinais_vitais(self):
+        """
+        Metodo para gerar sinais vitais para o monitoramento leito hospitalar
+        """
         self.temperatura = random.randint(33, 40)
         self.spo2 = random.randint(60, 100)
         self.freq_respiratoria = random.randint(10, 60)
@@ -19,6 +29,9 @@ class Leito:
         self.pressao_diastolica = random.randint(60, 90)
 
     def gerar_alertas(self):
+        """
+        Metodo para gerar alertas para o monitoramento leito hospitalar
+        """
         limites = {
             "temperatura": {"min": 34, "max": 40},
             "spo2": {"min": 90, "max": 100},
@@ -45,6 +58,9 @@ class Leito:
                 self.alertas.append(f"{sinal}_alta")
         
     def get_sinais_vitais(self):
+        """
+        Metodo para recuperar os sinais vitais para o monitoramento leito hospitalar
+        """
         return {
                     "sinais_vitais": {
                     "temperatura": self.temperatura,
@@ -55,4 +71,3 @@ class Leito:
                     "alertas": self.alertas
                     }
                 }
-            
