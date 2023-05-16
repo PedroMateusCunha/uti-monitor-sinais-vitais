@@ -12,7 +12,7 @@ class Leito:
         
     def gerar_sinais_vitais(self):
         self.temperatura = random.randint(33, 40)
-        self.spo2 = random.randint(60, 100)
+        self.spo2 = random.randint(80, 100)
         self.freq_respiratoria = random.randint(10, 60)
         self.freq_cardiaca = random.randint(40, 190)
         self.pressao_sistolica = random.randint(100, 180)
@@ -23,7 +23,7 @@ class Leito:
             "temperatura": {"min": 34, "max": 40},
             "spo2": {"min": 90, "max": 100},
             "freq_respiratoria": {"min": 12, "max": 16},
-            "freq_cardiaca": {"min": 70, "max": 100},
+            "freq_cardiaca": {"min": 73, "max": 100},
             "pressao_sistolica": {"min": 90, "max": 120},
             "pressao_diastolica": {"min": 60, "max": 80} #coloca min e max em contants também 
         } #Pode ser um "static" um atributo da prórpia classe
