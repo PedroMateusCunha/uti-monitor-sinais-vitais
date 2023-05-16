@@ -1,0 +1,24 @@
+services:
+  sinais-vitais:
+      container_name: ${APP_NAME:-sinais-vitais}-${ENV_NAME:-dev}
+      image: ${APP_NAME:-sinais-vitais}:${ENV_NAME:-dev}
+      build:
+        context: .
+        dockerfile: ./monitor-sinais-vitais/Dockerfile
+        args:
+          APP_NAME: ${APP_NAME:-sinais-vitais}
+          ENV_NAME: ${ENV_NAME:-dev}
+      ports:
+        - "${SINAIS_VITAIS_PORT:-7001}:8000"
+      restart: unless-stopped
+      healthcheck:
+        test: ["CMD-SHELL", "curl -f http://localhost:${BACKEND_PORT:-7001}/health || exit 1"]
+        interval: 1m
+        timeout: 10s
+        retries: 5
+      networks:
+        - projeto_uti
+
+networks:
+  projeto_uti:
+    driver: bridge
